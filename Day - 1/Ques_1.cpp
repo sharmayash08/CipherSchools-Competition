@@ -32,7 +32,7 @@ Node* makeLL(){
     
 }
 
-/*int twinSum(Node* head){
+int twinSum(Node* head){
     vector<int>arr;
     Node* temp = head;
     while(temp){
@@ -46,20 +46,8 @@ Node* makeLL(){
     }
 
     return sum;
-}*/
-
-int twinSum(Node* head){
-    Node* slow = head;
-    Node* fast = head;
-    int sum = 0;
-    while(fast !=NULL && fast -> next != NULL){
-        fast = fast -> next -> next;
-        sum = max(sum , slow -> data + fast -> data);
-        slow = slow -> next;
-    }
-    return sum;
-
 }
+
 
 void display(Node* &head){
     Node* temp = head;
@@ -73,7 +61,6 @@ void display(Node* &head){
 int main(){
     Node* head = makeLL();
     display(head);
-    // cout << "Maximum twin sum : " << twinSum(head);
-    cout << twinSum(head);
+    cout << "Maximum twin sum : " << twinSum(head);
     return 0;
 }
